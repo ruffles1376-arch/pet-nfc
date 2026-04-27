@@ -1,34 +1,27 @@
 body {
-  font-family: Arial;
-  background: #0f172a;
   margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
   color: white;
 }
 
-#contenido {
+.container {
   max-width: 400px;
   margin: auto;
-  background: #1e293b;
-  border-radius: 20px;
-  overflow: hidden;
-  margin-top: 20px;
-}
-
-.foto {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+  padding: 20px;
 }
 
 .card-body {
-  padding: 15px;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .estado {
-  padding: 8px;
+  padding: 10px;
   border-radius: 10px;
-  margin-bottom: 10px;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .seguro {
@@ -39,37 +32,33 @@ body {
   background: red;
 }
 
-a, button {
+h2 {
+  margin: 10px 0;
+}
+
+.btn {
   display: block;
   margin: 10px 0;
-  padding: 10px;
+  padding: 12px;
   border-radius: 10px;
   text-align: center;
   text-decoration: none;
+  color: white;
   border: none;
 }
 
-a {
+.llamar {
   background: #22c55e;
-  color: white;
+}
+
+.veterinaria {
+  background: #8b5cf6;
 }
 
 .mapa {
   background: #3b82f6;
-  color: white;
 }
 
 .alerta {
   background: #ef4444;
-  color: white;
-}
-.veterinaria {
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-  text-decoration: none;
-  background: #8b5cf6;
-  color: white;
 }

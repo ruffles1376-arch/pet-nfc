@@ -1,0 +1,44 @@
+[
+  {
+    "id": "123",
+    "nombre": "Luna",
+    "especie": "Perro",
+    "raza": "Border Collie",
+    "edad": "4",
+    "dueno": "Ricardo Robles",
+    "telefono": "6271116131",
+    "veterinaria": "6276882994",
+    "vacunas": "Completo",
+    "notas": "Si no contesta, contactar a familiar",
+    "estado": "seguro",
+    "mostrarTelefono": true
+  },
+  {
+    "id": "456",
+    "nombre": "Ellie",
+    "especie": "Perro",
+    "raza": "Labrador",
+    "edad": "2",
+    "dueno": "David López",
+    "telefono": "6272222222",
+    "veterinaria": "6276882994",
+    "vacunas": "Completo",
+    "notas": "Muy amigable",
+    "estado": "seguro",
+    "mostrarTelefono": true
+  },
+  {
+    "id": "789",
+    "nombre": "Chavo",
+    "especie": "Perro",
+    "raza": "Mestizo",
+    "edad": "3",
+    "dueno": "Carlos Ruiz",
+    "telefono": "6273333333",
+    "veterinaria": "6276882994",
+    "vacunas": "Pendiente",
+    "notas": "Asustadizo",
+    "estado": "perdido",
+    "mostrarTelefono": true
+  }
+]

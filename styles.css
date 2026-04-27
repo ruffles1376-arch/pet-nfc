@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  display: flex;
+  justify-content: center;
+}
+
+/* Contenedor tipo celular */
+.container {
+  width: 100%;
+  max-width: 360px; /* 🔥 más delgado */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Tarjeta */
+.card-body {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+/* Estado */
+.estado {
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.seguro {
+  background: #16a34a;
+}
+
+.perdido {
+  background: #dc2626;
+}
+
+/* Texto */
+h2 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+p {
+  margin: 5px 0;
+  color: #cbd5f5;
+}
+
+/* Botones */
+.btn {
+  display: block;
+  margin: 12px 0;
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+/* Colores */
+.llamar {
+  background: #22c55e;
+}
+
+.veterinaria {
+  background: #8b5cf6;
+}
+
+.mapa {
+  background: #3b82f6;
+}
+
+.alerta {
+  background: #ef4444;
+}
+
+/* Efecto touch */
+.btn:active {
+  transform: scale(0.97);
+}

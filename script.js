@@ -1,4 +1,3 @@
-// Variable global
 let mascota;
 
 // Obtener ID desde la URL
@@ -8,7 +7,7 @@ const id = params.get("id");
 // Contenedor
 const contenedor = document.getElementById("contenido");
 
-// Cargar base de datos (anti-cache)
+// Cargar datos
 fetch("data.json?v=" + new Date().getTime())
   .then(res => res.json())
   .then(data => {
@@ -38,15 +37,15 @@ fetch("data.json?v=" + new Date().getTime())
 
           ${
             mascota.mostrarTelefono
-            ? `<a href="tel:${mascota.telefono}">📞 Llamar al dueño</a>`
+            ? `<a href="tel:${mascota.telefono}" class="btn llamar">📞 Llamar al dueño</a>`
             : `<p>🔒 Teléfono oculto</p>`
           }
 
-          <a href="tel:6276882994" class="veterinaria">🏥 Llamar a veterinaria</a>
+          <a href="tel:${mascota.veterinaria}" class="btn veterinaria">🏥 Llamar a veterinaria</a>
 
-          <button class="mapa" onclick="compartirUbicacion()">📍 Ver mi ubicación</button>
+          <button class="btn mapa" onclick="compartirUbicacion()">📍 Ver mi ubicación</button>
 
-          <button class="alerta" onclick="reportar()">🚨 Reportar encontrada</button>
+          <button class="btn alerta" onclick="reportar()">🚨 Reportar encontrada</button>
 
           <h3>⚠️ Información</h3>
           <p>Vacunas: ${mascota.vacunas}</p>
@@ -69,41 +68,28 @@ fetch("data.json?v=" + new Date().getTime())
 function compartirUbicacion() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(pos => {
-
       const link = `https://maps.google.com/?q=${pos.coords.latitude},${pos.coords.longitude}`;
       window.open(link, "_blank");
-
-    }, () => {
-      alert("No se pudo obtener la ubicación");
     });
   }
 }
 
 
-// 🚨 Reportar encontrada (SMS al dueño)
+// 🚨 Reportar (SMS)
 function reportar() {
   if (navigator.geolocation) {
 
     navigator.geolocation.getCurrentPosition(pos => {
 
-      const lat = pos.coords.latitude;
-      const lon = pos.coords.longitude;
-
-      const link = `https://maps.google.com/?q=${lat},${lon}`;
-
-      const telefono = mascota.telefono;
+      const link = `https://maps.google.com/?q=${pos.coords.latitude},${pos.coords.longitude}`;
 
       const mensaje = `🚨 Hola, encontré a ${mascota.nombre}. Estoy aquí: ${link}`;
 
-      const url = `sms:${telefono}?body=${encodeURIComponent(mensaje)}`;
+      const url = `sms:${mascota.telefono}?body=${encodeURIComponent(mensaje)}`;
 
       window.open(url);
 
-    }, () => {
-      alert("No se pudo obtener la ubicación");
     });
 
-  } else {
-    alert("Tu dispositivo no soporta geolocalización");
   }
 }
